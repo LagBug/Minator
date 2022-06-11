@@ -1,0 +1,38 @@
+title: "Minator > Question"
+slots: 36
+animationDelay: 5
+contents:
+  13:
+    item: "PAPER;1;0"
+    name: "&e%question%"
+    lore: {}
+  20:
+    item: "STAINED_GLASS_PANE;1;5"
+    name: "Yes"
+    lore: {}
+    action: "YES"
+  21:
+    item: "STAINED_GLASS_PANE;1;4"
+    name: "Probably"
+    lore: {}
+    action: "PROBABLY"
+  22:
+    item: "STAINED_GLASS_PANE;1;7"
+    name: "Don't know"
+    lore: {}
+    action: "DONT_KNOW"
+  23:
+    item: "STAINED_GLASS_PANE;1;1"
+    name: "Probably not"
+    lore: {}
+    action: "PROBABLY_NOT"
+  24:
+    item: "STAINED_GLASS_PANE;1;14"
+    name: "No"
+    lore: {}
+    action: "NO"
+  27:
+    item: "TRIPWIRE_HOOK;1;0"
+    name: "Undo last answer"
+    lore: {}
+    action: "UNDO"

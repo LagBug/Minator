@@ -1,0 +1,10 @@
+name: Minator
+main: me.lagbug.minator.Minator
+version: 1.6
+author: LagBug
+description: An advanced plugin implementation that can read your mind.
+
+commands:
+   minator:
+     description: The main command for this plugin.
+     aliases: [akinator, blowmymind]

@@ -1,0 +1,28 @@
+title: "Minator > Loading..."
+slots: 36
+animationDelay: 5
+contents:
+  13:
+    item: "PAPER;1;0"
+    name: "&7Loading your query..."
+    lore: {}
+  20:
+    item: "STAINED_GLASS_PANE;1;5"
+    name: "&7Loading..."
+    lore: {}
+  21:
+    item: "STAINED_GLASS_PANE;1;4"
+    name: "&7Loading..."
+    lore: {}
+  22:
+    item: "STAINED_GLASS_PANE;1;7"
+    name: "&7Loading..."
+    lore: {}
+  23:
+    item: "STAINED_GLASS_PANE;1;1"
+    name: "&7Loading..."
+    lore: {}
+  24:
+    item: "STAINED_GLASS_PANE;1;14"
+    name: "&7Loading..."
+    lore: {}

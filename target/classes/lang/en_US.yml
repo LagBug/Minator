@@ -1,0 +1,13 @@
+general:
+  updateAvailable: "%prefix% An update was found, click this message."
+
+commands:
+  minator: {}
+  reload:
+    success: "%prefix% The configuration files were successfully reloaded."
+
+errors:
+  onlyPlayers: "%prefix% Only players can use this command."
+  noPermissions: "%prefix% You do not have enough permissions to do this."
+  playerNull: "%prefix% The specified player does not seem to be valid."
+  wrongUsage: "%prefix% The right usage is &6%usage%"

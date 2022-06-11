@@ -1,0 +1,18 @@
+title: "Minator GUI"
+slots: 9
+animationDelay: 5
+contents:
+  0:
+    item: "BOOK;1;0"
+    name: "&6Information"
+    lore:
+      - "&7Minator is an advanced plugin which by"
+      - "&7using AI, will guess who you're thinking of."
+      - ""
+      - "&7Think of a person (imaginary or not), answer a few questions,"
+      - "&7and the plugin will magically find who you were thinking about."
+  8:
+    item: "FLASHING_GLASS;1;0"
+    name: "&6Click to play"
+    action: "PLAY"
+    lore: {}

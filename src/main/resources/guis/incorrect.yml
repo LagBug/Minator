@@ -1,0 +1,10 @@
+title: "Minator > Incorrect"
+slots: 9
+animationDelay: 5
+contents:
+  4:
+    item: "PAPER;1;0"
+    name: "&eDamn.. You actually beat me."
+    lore:
+    - "&7That feels really weird.. I'm only used to"
+    - "&7winning. Don't know what happened here."

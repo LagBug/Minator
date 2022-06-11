@@ -1,0 +1,10 @@
+title: "Minator > Correct"
+slots: 9
+animationDelay: 5
+contents:
+  4:
+    item: "PAPER;1;0"
+    name: "&eHaha! I was right once again."
+    lore:
+    - "&7You can try to beat me, but, trust"
+    - "&7me, you're not going to succeed."

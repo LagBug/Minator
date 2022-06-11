@@ -1,0 +1,18 @@
+title: "Minator > Answer"
+slots: 9
+animationDelay: 5
+contents:
+  2:
+    item: "PAPER;1;0"
+    name: "&7Is it &e%answer%&7?"
+    lore: {}
+  6:
+    item: "STAINED_GLASS_PANE;1;5"
+    name: "&aYes, it is."
+    lore: {}
+    action: "CORRECT"
+  7:
+    item: "STAINED_GLASS_PANE;1;14"
+    name: "&cNo, it's not."
+    lore: {}
+    action: "INCORRECT"

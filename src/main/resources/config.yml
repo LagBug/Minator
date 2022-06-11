@@ -1,0 +1,21 @@
+# Thank you so much for downloading my plugin,
+# it really means a lot to me!
+#            _             _             
+#           (_)           | |            
+#  _ __ ___  _ _ __   __ _| |_ ___  _ __ 
+# | '_ ` _ \| | '_ \ / _` | __/ _ \| '__|
+# | | | | | | | | | | (_| | || (_) | |   
+# |_| |_| |_|_|_| |_|\__,_|\__\___/|_|                                                      
+#
+# This is a file to help you configure settings to your likings. It is recommended
+# to leave everything as it is, but, if you know what you're doing, feel free to change
+# it. If you do not understand what something does, please leave it as it is and ask for help
+
+languageFile: "en_US" #The language file that should be used. Use the file name without .yml in /lang/ plugins folder 
+prefix: "&d&lMinator &r&f" #The prefix that is then replaced in the language files by %prefix%
+
+updateChecker: true #Specifies whether or not the update checker should work. If set to false, your server will start up faster
+debug: false #If set to true, everything that is happening and is related to the plugin will be logged in the console
+
+mode: "ONLINE" #Specifies whether or not the questions should be fetched from the web or not, this is a WIP
+finishProbability: 0.85 #The probability of the guess to finish the minator questions and give the result. Must be a double between 0.00 and 1.00
