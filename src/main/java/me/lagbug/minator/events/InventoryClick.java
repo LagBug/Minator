@@ -1,10 +1,8 @@
 package me.lagbug.minator.events;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
 import java.util.List;
 
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -34,24 +32,11 @@ public class InventoryClick implements Listener {
 		}
 		
 		handlers.forEach(handler -> {
-			if (getInventoryName(e).equals(ChatColor.translateAlternateColorCodes('&', handler.getGUIName()))) {
+			if (e.getView().getTitle().equals(ChatColor.translateAlternateColorCodes('&', handler.getGUIName()))) {
 				handler.execute(e, (Player) e.getWhoClicked());
 				e.setCancelled(true);
+				return;
 			}
 		});
-	}
-	
-	private String getInventoryName(InventoryClickEvent e) {
-		if (Bukkit.getVersion().contains("1.14") || Bukkit.getVersion().contains("1.15") || Bukkit.getVersion().contains("1.16")) {
-			return e.getView().getTitle();
-		} else {
-			try {
-				return (String) Class.forName("org.bukkit.inventory.Inventory")
-						.getMethod("getName", (Class<?>[]) new Class[0]).invoke(e.getInventory(), new Object[0]);
-			} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException
-					| NoSuchMethodException | SecurityException | ClassNotFoundException e1) {
-				return "N/A";
-			}
-		}
 	}
 }

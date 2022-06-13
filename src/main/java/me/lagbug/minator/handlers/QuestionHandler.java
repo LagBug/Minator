@@ -1,6 +1,5 @@
 package me.lagbug.minator.handlers;
 
-import java.io.IOException;
 import java.util.concurrent.CompletableFuture;
 
 import org.bukkit.Bukkit;
@@ -36,21 +35,17 @@ public class QuestionHandler extends GUIHandler {
 				CompletableFuture.runAsync(() -> {
 					Akiwrapper aw = plugin.getAkiMap().get(player);
 					if (aw.getCurrentQuestion() != null) {
-						try {
-							if (action.equalsIgnoreCase("UNDO")) {
-								aw.undoAnswer();
-							} else {
-								aw.answerCurrentQuestion(Answer.valueOf(action));
-								Bukkit.getScheduler().runTask(plugin,() -> player.openInventory(new InventoryBuilder(file).replace("%question%", aw.getCurrentQuestion().getQuestion()).build()));
-								
-								for (Guess guess : aw.getGuessesAboveProbability(plugin.getConfigFile().getDouble("finishProbability"))) {
-									if (guess.getProbability() >= plugin.getConfigFile().getDouble("finishProbability")) {
-										Bukkit.getScheduler().runTaskLater(plugin,() -> player.openInventory(new InventoryBuilder(getFile("answer")).replace("%answer%", guess.getName()).build()), 5);
-									}
+						if (action.equalsIgnoreCase("UNDO")) {
+							aw.undoAnswer();
+						} else {
+							aw.answerCurrentQuestion(Answer.valueOf(action));
+							Bukkit.getScheduler().runTask(plugin,() -> player.openInventory(new InventoryBuilder(file).replace("%question%", aw.getCurrentQuestion().getQuestion()).build()));
+							
+							for (Guess guess : aw.getGuessesAboveProbability(plugin.getConfigFile().getDouble("finishProbability"))) {
+								if (guess.getProbability() >= plugin.getConfigFile().getDouble("finishProbability")) {
+									Bukkit.getScheduler().runTaskLater(plugin,() -> player.openInventory(new InventoryBuilder(getFile("answer")).replace("%answer%", guess.getName()).build()), 5);
 								}
 							}
-						} catch (IOException ex) {
-							Bukkit.getScheduler().runTask(plugin, () -> player.openInventory(new InventoryBuilder(getFile("error")).replace("%error%", ex.getLocalizedMessage()).build()));
 						}
 
 					}

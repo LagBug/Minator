@@ -8,6 +8,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryClickEvent;
 
 import com.markozajc.akiwrapper.AkiwrapperBuilder;
+import com.markozajc.akiwrapper.core.exceptions.ServerNotFoundException;
 
 import me.lagbug.minator.Minator;
 import me.lagbug.minator.common.builders.InventoryBuilder;
@@ -30,7 +31,11 @@ public class HomeHandler extends GUIHandler {
 				player.openInventory(new InventoryBuilder(getFile("loading")).build());
 				
 				CompletableFuture.runAsync(() -> {
-					plugin.getAkiMap().put(player, new AkiwrapperBuilder().build());
+					try {
+						plugin.getAkiMap().put(player, new AkiwrapperBuilder().build());
+					} catch (ServerNotFoundException ex) {
+						Bukkit.getScheduler().runTask(plugin, () -> player.openInventory(new InventoryBuilder(getFile("error")).replace("%error%", ex.getMessage()).build()));
+					}
 				}).whenComplete((result, ex) -> {
 					Bukkit.getScheduler().runTask(plugin,() -> 
 						player.openInventory(ex == null ? new InventoryBuilder(getFile("question")).replace("%question%", plugin.getAkiMap().get(player).getCurrentQuestion().getQuestion()).build()
